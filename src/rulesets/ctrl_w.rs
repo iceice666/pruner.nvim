@@ -1,6 +1,7 @@
 use super::KeymapRuleset;
+use once_cell::sync::Lazy;
 
-fn get() -> KeymapRuleset {
+pub(crate) static RULE: Lazy<KeymapRuleset> = Lazy::new(|| {
     let prefix = "<C-W>";
     let sub_keys: Vec<&str> = vec![
         "<C-B>", "<C-C>", "<C-D>", "<C-F>", "<C-G>", "<C-H>", "<C-I>", "<C-J>", "<C-K>", "<C-L>",
@@ -20,4 +21,4 @@ fn get() -> KeymapRuleset {
             .map(|&key| format!("{}{}", prefix, key))
             .collect(),
     }
-}
+});

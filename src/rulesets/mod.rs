@@ -1,6 +1,10 @@
+pub mod ctrl_g;
 pub mod ctrl_w;
 
+use std::ops::Deref;
+
 use nvim_oxi::api::{self, opts::NotifyOpts, types::Mode};
+use once_cell::sync::Lazy;
 
 pub(crate) struct KeymapRuleset {
     name: String,
@@ -40,4 +44,24 @@ pub(crate) fn process(ruleset: KeymapRuleset) {
     }
 }
 
-pub enum Rulesets {}
+macro_rules! Ruleset {
+    (
+    $($name:ident => $package:ident),*
+    ) => {
+        pub enum Rulesets {
+            $($name),*
+        }
+
+        impl Rulesets {
+            pub (crate) fn get_ruleset(&self) -> &'static Lazy<KeymapRuleset> {
+                match self {
+                    $(Self::$name => &$package::RULE),*
+                }
+            }
+        }
+    };
+}
+
+Ruleset! {
+    CtrlW => ctrl_w
+}
