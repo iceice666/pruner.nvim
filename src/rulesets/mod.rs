@@ -1,4 +1,4 @@
-pub mod cmdline_completion;
+pub mod cmdline;
 pub mod ctrl_w;
 pub mod n_ctrl_a_x;
 pub mod v_ctrl_a_x;
@@ -65,7 +65,7 @@ macro_rules! Ruleset {
 
 Ruleset! {
     CtrlW => ctrl_w,
-    CmdlineCompletion => cmdline_completion,
+    Cmdline => cmdline,
     nCtrlAX => n_ctrl_a_x,
     vCtrlAX => v_ctrl_a_x
 }
