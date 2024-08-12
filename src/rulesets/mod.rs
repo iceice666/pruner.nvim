@@ -1,8 +1,7 @@
-pub mod ctrl_g;
 pub mod cmdline_completion;
 pub mod ctrl_w;
-
-use std::ops::Deref;
+pub mod n_ctrl_a_x;
+pub mod v_ctrl_a_x;
 
 use nvim_oxi::api::{self, opts::NotifyOpts, types::Mode};
 use once_cell::sync::Lazy;
@@ -49,6 +48,7 @@ macro_rules! Ruleset {
     (
     $($name:ident => $package:ident),*
     ) => {
+        #[allow(non_camel_case_types)]
         pub enum Rulesets {
             $($name),*
         }
@@ -65,5 +65,7 @@ macro_rules! Ruleset {
 
 Ruleset! {
     CtrlW => ctrl_w,
-    CmdlineCompletion => cmdline_completion
+    CmdlineCompletion => cmdline_completion,
+    nCtrlAX => n_ctrl_a_x,
+    vCtrlAX => v_ctrl_a_x
 }
