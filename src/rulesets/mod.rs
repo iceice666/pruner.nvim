@@ -1,4 +1,5 @@
 pub mod ctrl_g;
+pub mod cmdline_completion;
 pub mod ctrl_w;
 
 use std::ops::Deref;
@@ -63,5 +64,6 @@ macro_rules! Ruleset {
 }
 
 Ruleset! {
-    CtrlW => ctrl_w
+    CtrlW => ctrl_w,
+    CmdlineCompletion => cmdline_completion
 }
