@@ -1,5 +1,6 @@
 pub mod cmdline;
 pub mod ctrl_w;
+pub mod i_ctrl_x;
 pub mod n_ctrl_a_x;
 pub mod v_ctrl_a_x;
 
@@ -67,5 +68,6 @@ Ruleset! {
     CtrlW => ctrl_w,
     Cmdline => cmdline,
     nCtrlAX => n_ctrl_a_x,
-    vCtrlAX => v_ctrl_a_x
+    vCtrlAX => v_ctrl_a_x,
+    iCtrlX => i_ctrl_x
 }
