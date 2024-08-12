@@ -1,3 +1,5 @@
+pub mod ctrl_w;
+
 use nvim_oxi::api::{self, opts::NotifyOpts, types::Mode};
 
 pub(crate) struct KeymapRuleset {
