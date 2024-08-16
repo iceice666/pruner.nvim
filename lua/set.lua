@@ -19,11 +19,13 @@ end
 --- @param x string
 function Set:insert(x)
   self.inner[x] = true
+  return self
 end
 
 --- @param x string
 function Set:remove(x)
   self.inner[x] = nil
+  return self
 end
 
 --- @return integer
@@ -34,20 +36,18 @@ function Set:size()
 end
 
 --- @param a Set
---- @param b Set
-function Set:add(a, b)
+function Set:add(a)
   local res = Set:new({})
+  for k, _ in pairs(self.inner) do res:insert(k) end
   for k, _ in pairs(a.inner) do res:insert(k) end
-  for k, _ in pairs(b.inner) do res:insert(k) end
   return res
 end
 
 --- @param a Set
---- @param b Set
-function Set:minus(a, b)
+function Set:minus(a)
   local res = Set:new({})
-  for k, _ in pairs(a.inner) do
-    if not b:contains(k) then res:insert(k) end
+  for k, _ in pairs(self.inner) do
+    if not a:contains(k) then res:insert(k) end
   end
   return res
 end
