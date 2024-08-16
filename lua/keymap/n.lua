@@ -8,6 +8,8 @@ local rulesets = {
   "<C-W>F", "<C-W>h", "<C-W>i", "<C-W>j", "<C-W>k", "<C-W>l", "<C-W>n", "<C-W>o", "<C-W>p", "<C-W>q", "<C-W>r", "<C-W>s",
   "<C-W>t", "<C-W>v", "<C-W>w", "<C-W>x", "<C-W>z", "<C-W>k", "<C-W>}", "<C-W><Down>", "<C-W><Up>", "<C-W><Left>",
   "<C-W><Right>", "<C-W>g]", "<C-W>g}", "<C-W>gf", "<C-W>gF", "<C-W>gt", "<C-W>gT", "<C-W>g<Tab>", "<C-W>g<C-]>",
+
+  "<C-A>", "<C-X>"
 }
 
 
