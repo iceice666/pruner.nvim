@@ -13,7 +13,7 @@ local default = require("keymap._default")
 
 --- @param opts { [string]: string[]}
 function M.setup(opts)
-  local modes = { "c", "i", "o", "s", "t", "v", "x" }
+  local modes = { "c", "i", "o", "s", "t", "v", "x", "n" }
   for _, mode in pairs(modes) do
     local mapping = Set:new(opts[mode]) or default[mode]
     prune(mapping, mode)
