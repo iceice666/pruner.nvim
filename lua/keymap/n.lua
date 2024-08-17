@@ -1,4 +1,4 @@
-local rulesets = {
+return {
   -- <C-W> window control
   "<C-W><C-B>", "<C-W><C-C>", "<C-W><C-D>", "<C-W><C-F>", "<C-W><C-G>", "<C-W><C-H>", "<C-W><C-I>", "<C-W><C-J>",
   "<C-W><C-K>", "<C-W><C-L>", "<C-W><C-N>", "<C-W><C-O>", "<C-W><C-P>", "<C-W><C-Q>", "<C-W><C-R>", "<C-W><C-S>",
@@ -11,7 +11,3 @@ local rulesets = {
 
   "<C-A>", "<C-X>"
 }
-
-
-
-return require("set"):new(rulesets)

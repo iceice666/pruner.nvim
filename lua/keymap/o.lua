@@ -1,1 +1,1 @@
-return require("set"):new({})
+return {}

@@ -1,4 +1,4 @@
-local rulesets = {
+return {
   "<C-R>=",
   "<C-\\>e",
   "<C-S-V>",
@@ -19,5 +19,3 @@ local rulesets = {
   "<C-p>", "<C-q>", "<C-r>", "<C-t>", "<C-u>", "<C-v>", "<C-w>",
   "<C-y>", "<C-z>", "<C-[>", "<C-]>", "<C-^>",
 }
-
-return require("set"):new(rulesets)
