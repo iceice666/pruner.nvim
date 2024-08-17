@@ -32,9 +32,5 @@ function M.disable_defaults()
   vim.cmd(":unmap gc")
   vim.cmd(":unmap gcc")
   vim.cmd(":unmap K")
-  vim.cmd(":unmap <C-W>d")
-  vim.cmd(":unmap <C-L>")
-  vim.cmd(":unmap <C-W>")
-  vim.cmd(":unmap <C-U>")
 end
 return M
