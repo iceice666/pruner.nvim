@@ -4,7 +4,7 @@ M = {}
 --- @param mode string
 local function prune(mapping, mode)
   for key, _ in pairs(mapping) do
-    pcall(vim.api.nvim_set_keymap, mode, key)
+    pcall(vim.keymap.del, mode, key)
   end
 end
 
