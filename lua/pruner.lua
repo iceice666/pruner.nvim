@@ -22,4 +22,19 @@ function M.setup(opts)
   end
 end
 
+function M.disable_defaults()
+  vim.cmd(":unmap Y")
+  vim.cmd(":unmap *")
+  vim.cmd(":unmap #")
+  vim.cmd(":unmap @")
+  vim.cmd(":unmap Q")
+  vim.cmd(":unmap &")
+  vim.cmd(":unmap gc")
+  vim.cmd(":unmap gcc")
+  vim.cmd(":unmap K")
+  vim.cmd(":unmap <C-W>d")
+  vim.cmd(":unmap <C-L>")
+  vim.cmd(":unmap <C-W>")
+  vim.cmd(":unmap <C-U>")
+end
 return M
