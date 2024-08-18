@@ -1,14 +1,12 @@
 M = {}
 
---- @param mapping string[]
+--- @param key string
 --- @param mode string
-local function prune(mapping, mode)
-  for _, key in pairs(mapping) do
-    -- try to remove first
-    local _, _ = pcall(vim.keymap.del, mode, key)
-    -- then mark as pruned
-    local _, _ = pcall(vim.keymap.set, mode, key, "<nop>", { nowait = true, desc = "<==|PRUNED|==>" })
-  end
+local function prune(key, mode)
+  -- try to remove first
+  local _, _ = pcall(vim.keymap.del, mode, key)
+  -- then mark as pruned
+  local _, _ = pcall(vim.keymap.set, mode, key, "<nop>", { nowait = true, desc = "<==|PRUNED|==>" })
 end
 
 local default = require("keymap._default")
@@ -18,8 +16,13 @@ function M.setup(opts)
   opts = opts or {}
   local modes = { "c", "i", "o", "s", "t", "v", "x", "n" }
   for _, mode in pairs(modes) do
-    local mapping = opts[mode] or default[mode]
-    prune(mapping, mode)
+    local opt_mode = opts[mode] or {}
+    local default_mode = default[mode]
+    for _, key in pairs(default_mode) do
+      if not vim.tbl_contains(opt_mode, key) then
+        prune(key, mode)
+      end
+    end
   end
 end
 
