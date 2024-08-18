@@ -1,5 +1,6 @@
 return {
   -- <C-W> window control
+  "<C-W>",
   "<C-W><C-B>", "<C-W><C-C>", "<C-W><C-D>", "<C-W><C-F>", "<C-W><C-G>", "<C-W><C-H>", "<C-W><C-I>", "<C-W><C-J>",
   "<C-W><C-K>", "<C-W><C-L>", "<C-W><C-N>", "<C-W><C-O>", "<C-W><C-P>", "<C-W><C-Q>", "<C-W><C-R>", "<C-W><C-S>",
   "<C-W><C-T>", "<C-W><C-V>", "<C-W><C-W>", "<C-W><C-X>", "<C-W><C-Z>", "<C-W><C-]>", "<C-W><C-^>", "<C-W><C-_>",
