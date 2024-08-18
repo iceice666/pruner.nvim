@@ -7,7 +7,7 @@ local function prune(mapping, mode)
     -- try to remove first
     local _, _ = pcall(vim.keymap.del, mode, key)
     -- then mark as pruned
-    local _, _ = pcall(vim.keymap.set, mode, key, "<nop>", { nowait = true, desc = "pruned" })
+    local _, _ = pcall(vim.keymap.set, mode, key, "<nop>", { nowait = true, desc = "<==|PRUNED|==>" })
   end
 end
 
@@ -24,19 +24,19 @@ function M.setup(opts)
 end
 
 function M.disable_defaults()
-  vim.cmd(":unmap Y")
-  vim.cmd(":unmap *")
-  vim.cmd(":unmap #")
-  vim.cmd(":unmap @")
-  vim.cmd(":unmap Q")
-  vim.cmd(":unmap &")
-  vim.cmd(":unmap gc")
-  vim.cmd(":unmap gcc")
-  vim.cmd(":unmap K")
-  vim.cmd(":unmap <C-W>d")
-  vim.cmd(":unmap <C-L>")
-  vim.cmd(":unmap <C-W>")
-  vim.cmd(":unmap <C-U>")
+  pcall(function()
+    vim.cmd(":unmap Y")
+    vim.cmd(":unmap *")
+    vim.cmd(":unmap #")
+    vim.cmd(":unmap @")
+    vim.cmd(":unmap Q")
+    vim.cmd(":unmap &")
+    vim.cmd(":unmap gc")
+    vim.cmd(":unmap gcc")
+    vim.cmd(":unmap K")
+    vim.cmd(":unmap <C-W>d")
+    vim.cmd(":unmap <C-L>")
+  end)
 end
 
 return M
